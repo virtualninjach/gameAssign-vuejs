@@ -1,5 +1,5 @@
 <template>
-  <div id="edit-employee">
+  <div id="edit-game">
       <h3>Edit Game Information</h3>
       <div class="row">
       <form @submit.prevent="updateGame" class="col s12">
@@ -58,7 +58,7 @@
           name: 'edit-game',
           data(){
               return {
-                   game_id: null,
+                  game_id: null,
                   game_date: null,
                   game_time: null,
                   location: null,
@@ -69,7 +69,7 @@
           },
           
           beforeRouteEnter(to,from, next){
-                db.collection('games').where('game_id','==',to.params.employee_id).get()
+                db.collection('games').where('game_id','==',to.params.game_id).get()
                 .then(querySnapshop => {
                     querySnapshop.forEach(doc=>{
                         next(vm => {
@@ -120,7 +120,7 @@
                           ref3: this.ref3
                       })
                       .then(() =>{
-                          this.$router.push({name: 'view-employee',
+                          this.$router.push({name: 'view-game',
                           params: {game_id: this.game_id}})
                       } )
 

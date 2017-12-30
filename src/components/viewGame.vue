@@ -15,7 +15,8 @@
       <router-link to="/" class="btn grey">Back</router-link>
       <button @click="deleteGame" class="btn red">Delete </button>
       <div class="fixed-action-btn">
-        <router-link v-bind:to="{name: 'edit-game', params: {game_id: game_id}}" class="btn-floating btn-large red">
+        <router-link v-bind:to="{name: 'edit-game', 
+            params: {game_id: game_id}}" class="btn-floating btn-large red">
         <i class="fa fa-pencil"></i>
         </router-link>
       </div>
