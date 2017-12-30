@@ -1,3 +1,4 @@
+model
 game_date
 game_id
 game_time
@@ -12,6 +13,7 @@ location geographically
 game ages/ U what?
 halves in minutes
 quaters in minutes
+
 
 
 if they pick a game at 1 oclock at location 1 can't request 1 oclock game at another location
