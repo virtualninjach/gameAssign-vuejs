@@ -1,19 +1,41 @@
 <template>
   <div id="dashboard">
-      <ul class="collection with-header">
-          <li class="collection-header">
-              <h4>Games</h4>
-            </li>
-              <li v-for="game in games" v-bind:key="game.id" class="collection-item">
-              <div class="chip">{{game.location}}</div>
-              {{game.game_id}}:{{game.game_date}}:{{game.game_time}}:{{game.location}}:{{game.ref1}}:{{game.ref2}}:{{game.ref3}}
-              
-              <router-link class="secondary-content" v-bind:to="{name:'view-game', params: {game_id: game.game_id}}">
-                <i class="fa fa-eye"></i>
-              </router-link>
-             
-          </li>
-      </ul>
+      <h4>Games</h4>
+              <table class="collection with-header">
+                  <tr class="collection-header">
+                        <th>ID</th>
+                        <th>Game ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Sub Location</th>
+                        <th>Center</th>
+                        <th>AR 1</th>
+                        <th>AR 2</th>
+                        <th>AR 3</th>
+                        <th></th>
+                  </tr>
+                  <tr v-for="game in games" v-bind:key="game.id" class="collection-item">
+                        <td>{{game.id}}</td>
+                        <td>{{game.game_id}}</td>
+                        <td>{{game.game_date}}</td>
+                        <td>{{game.game_time}}</td>
+                        <td><div class="chip">{{game.location_name}}</div></td>
+                        <td>{{game.sublocation_name}}</td>
+                        <td>{{game.center_ref}}</td>
+                        <td>{{game.ar1}}</td>
+                        <td>{{game.ar2}}</td>
+                        <td>{{game.ar3}}</td>
+                        <td>
+                            <router-link class="secondary-content" 
+                                v-bind:to="{name:'view-game', 
+                                params: {game_id: game.game_id}}">
+                                <i class="fa fa-eye"></i>
+                            </router-link>
+                        </td>
+                    </tr>
+                </table>
+            
       <div class="fixed-action-btn">
         <router-link to="/new" class="btn-floating btn-large red">
         <i class="fa fa-plus"></i>
@@ -41,10 +63,12 @@
                             'game_id':doc.data().game_id,
                             'game_date':doc.data().game_date,
                             'game_time':doc.data().game_time,
-                            'location':doc.data().location,
-                            'ref1':doc.data().ref1,
-                            'ref2':doc.data().ref2,
-                            'ref3':doc.data().ref3
+                            'location_name':doc.data().location_name,
+                            'sublocation_name':doc.data().sublocation_name,
+                            'center_ref':doc.data().center_ref,
+                            'ar1':doc.data().ar1,
+                            'ar2':doc.data().ar2,
+                            'ar3':doc.data().ar3
 
                         }
                         this.games.push(data)

@@ -22,25 +22,25 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-                <input type="text" v-model="location" required>
+                <input type="text" v-model="location_name" required>
       
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-                <input type="text" v-model="ref1" required>
+                <input type="text" v-model="ar1" required>
       
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-                <input type="text" v-model="ref2" required>
+                <input type="text" v-model="ar2" required>
       
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-                <input type="text" v-model="ref3" required>
+                <input type="text" v-model="ar3" required>
       
             </div>
           </div>
@@ -76,10 +76,11 @@
                             vm.game_id = doc.data().game_id
                             vm.game_date = doc.data().game_date
                             vm.game_time = doc.data().game_time
-                            vm.location = doc.data().location
-                            vm.ref1 = doc.data().ref1
-                            vm.ref2 = doc.data().ref2
-                            vm.ref3 = doc.data().ref3
+                            vm.location_name = doc.data().location_name
+                            vm.center_ref = doc.data().center_ref
+                            vm.ar1 = doc.data().ar1
+                            vm.ar2 = doc.data().ar2
+                            vm.ar3 = doc.data().ar3
                             
                             
                         })
@@ -98,10 +99,10 @@
                       this.game_id=doc.data().game_id
                       this.game_date = doc.data().game_date
                       this.game_time = doc.data().game_time
-                      this.location = doc.data().location
-                      this.ref1 = doc.data().ref1
-                      this.ref2 = doc.data().ref2
-                      this.ref3 = doc.data().ref3
+                      this.location_name = doc.data().location_name
+                      this.ar1 = doc.data().ar1
+                      this.ar2 = doc.data().ar2
+                      this.ar3 = doc.data().ar3
 
                   })
               })
@@ -114,10 +115,10 @@
                           game_id: this.game_id,
                           game_date: this.game_date,
                           game_time: this.game_time,
-                          location: this.location,
-                          ref1: this.ref1,
-                          ref2: this.ref2,
-                          ref3: this.ref3
+                          location_name: this.location_name,
+                          ar1: this.ar1,
+                          ar2: this.ar2,
+                          ar3: this.ar3
                       })
                       .then(() =>{
                           this.$router.push({name: 'view-game',

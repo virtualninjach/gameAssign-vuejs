@@ -1,18 +1,20 @@
-model
+address1 
+address2
+age
+ar1
+ar2
+ar3
+center_ref
+city
 game_date
 game_id
+game_minutes
 game_time
-location
-ref1
-ref2
-ref3
+location_name
+state "OH"
+sublocation_name
+zip_code
 
-need:
-ammount of minutes per game
-location geographically
-game ages/ U what?
-halves in minutes
-quaters in minutes
 
 if they pick a game at 1 oclock at location 1 can't request 1 oclock game at another location
 deployee
