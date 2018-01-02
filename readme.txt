@@ -1,18 +1,19 @@
-address1 
-address2
-age
+id
+game_id
+game_date
+game_time
+location_name
+sublocation_name
+center_ref
 ar1
 ar2
 ar3
-center_ref
+address1 
+address2
+age
 city
-game_date
-game_id
 game_minutes
-game_time
-location_name
-state "OH"
-sublocation_name
+state
 zip_code
 
 

@@ -17,10 +17,10 @@
                   </tr>
                   <tr v-for="game in games" v-bind:key="game.id" class="collection-item">
                         <td>{{game.id}}</td>
-                        <td>{{game.game_id}}</td>
+                        <td><div class="chip">{{game.game_id}}</div></td>
                         <td>{{game.game_date}}</td>
                         <td>{{game.game_time}}</td>
-                        <td><div class="chip">{{game.location_name}}</div></td>
+                        <td>{{game.location_name}}</td>
                         <td>{{game.sublocation_name}}</td>
                         <td>{{game.center_ref}}</td>
                         <td>{{game.ar1}}</td>
