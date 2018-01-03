@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import LoginPage from '@/components/LoginPage'
 import Dashboard from '@/components/Dashboard'
 import NewGame from '@/components/newGame'
 import EditGame from '@/components/EditGame'
-
 import ViewGame from '@/components/viewGame'
 import helloworld from '@/components/HelloWorld'
 
@@ -15,6 +15,11 @@ export default new Router({
       path: '/',
       name: 'dashboard',
       component: Dashboard
+    },
+    {
+      path: '/loginpage',
+      name: 'login-page',
+      component: LoginPage
     },
     {
       path: '/new',
