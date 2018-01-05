@@ -16,6 +16,25 @@ game_minutes
 state
 zip_code
 
+todo:
+referee signup
+    date of birth
+    name 
+    address 
+    2 phone
+    classifcation/grade/rating (between 15 - 5)
+
+    assigner needs to be able to change rating for ref and game
+
+classification/grade (example: level 300)
+    ref classification
+    game assignment classification
+
+assigner
+location drop down
+game_time field "roller"
+game_date "calendar"
+
 
 if they pick a game at 1 oclock at location 1 can't request 1 oclock game at another location
 deployee

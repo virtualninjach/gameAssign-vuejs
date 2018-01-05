@@ -2,19 +2,24 @@
 <div id=login-page>
 
           <p>{{msg}}</p>
-
-          <input class="input-field col s12" type="text" id="email" name="email" placeholder="Email"/>
-          &nbsp;&nbsp;&nbsp;
-          <input class="input-field col s12"  type="password" id="password" name="password" placeholder="Password"/>
-          <br/><br/>
+          <div class="row">
+          <input class="input-field col s5 left-align" type="text" id="email" name="email" placeholder="Email"/>
+          </div>
+          <div class="row">
+          <input class="input-field col s5 lef-align"  type="password" id="password" name="password" placeholder="Password"/>
+          </div>
+          <div class="row">
           <button disabled class="waves-effect waves-light btn" id="quickstart-sign-in" name="signin">Sign In</button>
-          &nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="row">
           <button class="waves-effect waves-light btn" id="quickstart-sign-up" name="signup">Sign Up</button>
-          &nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="row">
           <button class="waves-effect waves-light btn" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
-          &nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="row">
           <button class="waves-effect waves-light btn" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-
+          </div>
           <!-- Container where we'll display the user details -->
           <div class="container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
@@ -25,18 +30,19 @@
 </template>
 <script> 
 var firebase = require('firebase');
-export default {
-  name: 'login-page',
-  data () {
-    return {
-      msg: 'Enter an email and password below and either sign in to an existing account or sign up'
-    }
-  }
-}
 
+    export default {
+      name: 'login-page',
+      data () {
+        return {
+          msg: 'Enter an email and password below and either sign in to an existing account or sign up'
+        }
+      }
+  }
+ 
     // Handles the sign in button press.    
 function toggleSignIn() {
-      alert('dropping into toggleSignIn');
+      //alert('dropping into toggleSignIn');
       if (firebase.auth().currentUser) {
         // [START signout]
         firebase.auth().signOut();
@@ -110,7 +116,8 @@ function handleSignUp() {
     /**
      * Sends an email verification to the user.
      */
-    function sendEmailVerification() {
+function sendEmailVerification() {
+  var firebase = require('firebase');
       // [START sendemailverification]
       firebase.auth().currentUser.sendEmailVerification().then(function() {
         // Email Verification sent!
@@ -121,7 +128,8 @@ function handleSignUp() {
       // [END sendemailverification]
     }
 
-    function sendPasswordReset() {
+  function sendPasswordReset() {
+      var firebase = require('firebase');
       var email = document.getElementById('email').value;
       // [START sendpasswordemail]
       firebase.auth().sendPasswordResetEmail(email).then(function() {
@@ -151,11 +159,13 @@ function handleSignUp() {
      *    out, and that is where we update the UI.
      */
     function initApp() {
+
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
         // [START_EXCLUDE silent]
         document.getElementById('quickstart-verify-email').disabled = true;
+
         // [END_EXCLUDE]
         if (user) {
           // User is signed in.
@@ -174,7 +184,9 @@ function handleSignUp() {
             document.getElementById('quickstart-verify-email').disabled = false;
           }
           // [END_EXCLUDE]
-        } else {
+        } 
+        else 
+        {
           // User is signed out.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
