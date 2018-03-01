@@ -1,3 +1,5 @@
+This is a simple nodejs project that uses Firebase as the database and vue.js as the front end...Pretty fun stuff...
+
 # gameassign-vuejs
 
 > simple referree game assigner
@@ -17,6 +19,4 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-"# gameAssign-vuejs" 
+ 
