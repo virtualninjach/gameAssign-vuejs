@@ -1,5 +1,5 @@
 export default{
-    apiKey: "AIzaSyCWBRfANUAVVPFPpoG_zdI7RoSv_irmErM",
+    apiKey: "",
     authDomain: "gameassign.firebaseapp.com",
     databaseURL: "https://gameassign.firebaseio.com",
     projectId: "gameassign",
